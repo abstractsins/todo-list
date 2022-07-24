@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&family=Saira+Extra+Condensed:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <title>Dan's ToDo List</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="title-container">
+            <h1 class="title-text" id="page-title">Dan's To-Do List!</h1>
+        </div>
+    </div>
+
+    <!-- APP CONTAINER -->
+    <div class="app-container">
+        
+        <!-- APP HEADER -->
+        <div class="app-header-container">
+            
+            <!-- DATE SECTION -->
+            <div class="date">
+                <h2 class="app-header">Today is:</h2>
+                <input class="day" type="text">
+            </div>
+
+            <!-- ADD TASK SECTION -->
+            <div class="add-task">
+                <h2 class="app-header">Add Task:</h2>
+                <input class="input-task" type="text">                
+            </div>
+
+        </div>
+        
+        <!-- APP BODY -->
+        <div class="app-body">
+
+            <!-- SAMPLE TASK 1 -->
+            <div class="task" id="task-1">
+                <div class="task-text">
+                    <h3>Grocery Shopping</h3>
+                </div>
+            </div>
+
+            <!-- SAMPLE TASK 2 -->
+            <div class="task" id="task-2">
+                <div class="task-text">
+                    <h3>Do Dishes</h3>
+                </div>
+            </div>
+            
+            <!-- SAMPLE TASK 3 -->
+            <div class="task" id="task-3">
+                <div class="task-text">
+                    <h3>Put away laundry</h3>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-container">
+            <h4 class="footer-text">The Footer</h4>
+        </div>
+    </div>    
+    
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="main.js"></script>
+
+</body>
+</html>

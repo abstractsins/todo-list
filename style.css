@@ -1,0 +1,140 @@
+/* TABLE OF CONTENTS */
+/* 0 -- Global Concerns */
+/* 1 -- Headers */
+/* 2 -- Sections */
+/* 3 -- App Body */
+/* END TABLE OF CONTENTS */
+
+
+/* 0 -- GLOBAL CONCERNS */
+* {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    /* CUSTOM COLORS */
+    --orange-soda: #F06543;
+    --platinum: #E8E9EB;
+    --alabaster: #E0DFD5;
+    --onyx: #313638;
+    --sandy-brown: #F09D51;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+}
+/* END - 0 -- GLOBAL CONCERNS */
+
+/* 1 -- HEADERS */
+h1 {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 3em;
+    color: var(--onyx);
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--platinum)
+}
+
+h4 {
+    font-family: monospace;
+    font-size: 0.75em;
+}
+/* END - 1 -- HEADERS */
+
+/* 2 -- SECTIONS */
+.header {
+    background-color: var(--sandy-brown);
+    padding: 15px 30px;
+}
+
+.app-container {
+    background-color: var(--alabaster);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 15px 30px;
+    height: 100%;
+}
+
+.app-header-container {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.day {
+    width: 30%;
+    text-align: center;
+    padding: 5px;
+    margin: 0 10px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.add-task {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-task {
+    padding: 5px;
+    margin: 0 10px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.footer {
+    background-color: rgb(152, 209, 211);
+    padding: 15px 30px;
+    height: 5vh;
+}
+/* END - 2 -- SECTIONS */
+
+/* 3 -- APP BODY */
+.app-body {
+    background-color: var(--orange-soda);
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    height: fit-content;
+    width: 80%;
+    border-radius: 15px;
+    border: 8px double var(--platinum);
+}
+
+.task {
+    background-color: var(--onyx);
+    width: 80%;
+    height: 80px;
+    border-radius: 15px;
+    margin: 3px;
+    border: 3px solid var(--platinum);
+}
+
+.task-text {
+    margin: 5px 10px;
+}
+/* END - 3 -- APP BODY */
