@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link href="style.css" rel="stylesheet" type="text/css">
 
-    <title>Dan's ToDo List</title>
+    <title>Dan's To-Do List</title>
 </head>
 <body>
 
@@ -27,19 +27,62 @@
     <!-- APP CONTAINER -->
     <div class="app-container">
         
+
+        <!-- SLIDE -->
+        <div class="slide">
+
+            <!-- Header -->
+            <div class="slide-header">
+                <h2>Add Task</h2>
+            </div>
+
+            <!-- Task Name -->
+            <div class="new-task-info">
+                <div class="new-task-name">
+                    <h4 class="new-task-header">To Do:</h4>
+                </div>
+                <input class="new-task-name-input" type="text">
+            </div>
+
+            <!-- Task Status -->
+            <div class="dropdown" id="new-task-status">
+                <button class="dropbtn" id="new-task-status-dropbtn">Select Status...</button>
+                <div class="dropdown-content" id="from-dropdown">
+                    <ul class="dropdown-list">
+                        <li class="status-text" id="status-0">Not Started</li>
+                        <li class="status-text" id="status-1">Started</li>
+                        <li class="status-text" id="status-2">Planning</li>
+                        <li class="status-text" id="status-3">Planned</li>
+                        <li class="status-text" id="status-4">Scheduled</li>
+                        <li class="status-text" id="status-5">Scheduling</li>
+                        <li class="status-text" id="status-6">Complete</li>
+                    </ul>
+                </div>
+            </div>  
+
+            <!-- Notes -->
+            <div class="new-task-info">
+                <div class="new-task-name">
+                    <h4 class="new-task-header">Notes:</h4>
+                </div>
+                <textarea id="new-task-notes" name="new-task-notes" type="text" rows="20"></textarea>
+            </div>
+
+        </div>
+
+        <!-- ADD TASK SECTION -->
+        <div class="add-task-container">
+            <div class="btn" onclick="addSlide()">
+                <span class="btn-text">[ + ]</span>
+            </div>
+        </div>
+
         <!-- APP HEADER -->
         <div class="app-header-container">
             
             <!-- DATE SECTION -->
             <div class="date">
-                <h2 class="app-header">Today is:</h2>
-                <input class="day" type="text">
-            </div>
-
-            <!-- ADD TASK SECTION -->
-            <div class="add-task">
-                <h2 class="app-header">Add Task:</h2>
-                <input class="input-task" type="text">                
+                <h2 class="date-string"></h2>
             </div>
 
         </div>
@@ -57,16 +100,31 @@
             <!-- SAMPLE TASK 2 -->
             <div class="task" id="task-2">
                 <div class="task-text">
-                    <h3>Do Dishes</h3>
+                    <h3>Iron Laundry</h3>
                 </div>
             </div>
             
             <!-- SAMPLE TASK 3 -->
             <div class="task" id="task-3">
                 <div class="task-text">
-                    <h3>Put away laundry</h3>
+                    <h3>Vaccum</h3>
                 </div>
             </div>
+
+            <!-- SAMPLE TASK 4 -->
+            <div class="task" id="task-4">
+                <div class="task-text">
+                    <h3>Trash Bags</h3>
+                </div>
+            </div>
+
+            <!-- SAMPLE TASK 5 -->
+            <div class="task" id="task-5">
+                <div class="task-text">
+                    <h3>Clean bathroom</h3>
+                </div>
+            </div>
+            
 
         </div>
 

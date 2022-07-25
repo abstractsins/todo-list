@@ -4,11 +4,24 @@
   "description": "an API todo list",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"    
   },
-  "author": "Daniel J Berlin",
+  "author": "DJB",
   "license": "ISC",
   "dependencies": {
-    "glow": "^1.2.2"
-  }
+    "glow": "^1.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abstractsins/todo-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abstractsins/todo-list/issues"
+  },
+  "homepage": "https://github.com/abstractsins/todo-list#readme"  
 }

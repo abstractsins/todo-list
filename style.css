@@ -14,10 +14,13 @@
     box-sizing: content-box;
     /* CUSTOM COLORS */
     --orange-soda: #F06543;
+    --orange-soda-light: #f0664382;
     --platinum: #E8E9EB;
     --alabaster: #E0DFD5;
     --onyx: #313638;
     --sandy-brown: #F09D51;
+    --nice-blue: rgb(152, 209, 211);
+    /* END - CUSTOM COLORS */
 }
 
 body {
@@ -29,25 +32,27 @@ body {
 /* 1 -- HEADERS */
 h1 {
     font-family: 'Pacifico', sans-serif;
+    font-weight: 400;
     font-size: 3em;
     color: var(--onyx);
 }
 
 h2 {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
+    font-family: 'Pacifico', sans-serif;
+    font-size: 1.75em;
+    margin: 5px;
 }
 
 h3 {
     font-family: "Lato", sans-serif;
     font-size: 1.5em;
     font-weight: 400;
-    color: var(--platinum)
+    color: var(--platinum);
 }
 
 h4 {
-    font-family: monospace;
-    font-size: 0.75em;
+    font-family: "Saira Extra Condensed", monospace;
+    font-size: 1.5em;
 }
 /* END - 1 -- HEADERS */
 
@@ -55,6 +60,21 @@ h4 {
 .header {
     background-color: var(--sandy-brown);
     padding: 15px 30px;
+    border-bottom: 5px solid var(--onyx);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+}
+
+.date-string {
+    font-family: 'Pacifico';
+    font-weight: 100;
+    display: flex;
+    align-items: flex-end;
+    font-size: 2.25em;
+    color: var(--onyx);
 }
 
 .app-container {
@@ -62,7 +82,7 @@ h4 {
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 15px 30px;
+    padding: 0 0 50px 0;
     height: 100%;
 }
 
@@ -89,10 +109,35 @@ h4 {
     font-size: 1em;
 }
 
-.add-task {
+.add-task-container {
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn {
+    background-color: var(--nice-blue);
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 15px;
+    position: fixed;
+    cursor: pointer;
+    top: 10px;
+    right: 150px;
+}
+
+.btn:hover {
+    background-color: var(--orange-soda);
+}
+
+.btn-text {
+    font-family: "Saira Extra Condensed", sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--onyx);
 }
 
 .input-task {
@@ -104,25 +149,89 @@ h4 {
 }
 
 .footer {
-    background-color: rgb(152, 209, 211);
+    background-color: var(--onyx);
     padding: 15px 30px;
     height: 5vh;
+    /* border-top: 2px solid var(--onyx); */
+}
+
+.footer-text {
+    color: whitesmoke;
 }
 /* END - 2 -- SECTIONS */
 
 /* 3 -- APP BODY */
+.slide {
+    background-color: var(--nice-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: -360px;
+    width: 300px;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    transition: right 250ms ease-in-out;
+    padding: 30px;
+}
+
+.new-task-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.new-task-header {
+    padding: 5px 0;
+}
+
+.new-task-name-input {
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+.new-task-name {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+textarea {
+    width: calc(95%);
+    height: 100%;
+    padding: 10px;
+}
+
+.slide-header {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.slide-header h2 {
+    font-weight: 100;
+    color: var(--onyx);
+}
+
+.slide.active {
+    right: 0px;
+}
+
 .app-body {
     background-color: var(--orange-soda);
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 20px;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+    padding: 30px;
     height: fit-content;
-    width: 80%;
+    width: 50%;
     border-radius: 15px;
     border: 8px double var(--platinum);
+    align-self: center;
 }
 
 .task {
@@ -138,3 +247,61 @@ h4 {
     margin: 5px 10px;
 }
 /* END - 3 -- APP BODY */
+
+/* DROP DOWN */
+.dropbtn {
+    background-color: var(--sandy-brown);
+    color: whitesmoke;
+    padding: 5px 11px;
+    margin: 15px 0 0 0;
+    font-size: 1.25em;
+    font-weight: 400;
+    border: 3px solid black;
+    font-family: "Lato", sans-serif;
+}
+
+.dropdown-content {
+    font-family: "Saira Extra Condensed", sans-serif;
+    font-size: 1.25em;
+    display: none;
+    position: absolute;
+    background-color: var(--alabaster);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+ul {
+    list-style: none;    
+}
+
+li {
+    padding: 5px 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 15px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.status-text:hover {
+    cursor: pointer;
+    background-color: var(--orange-soda-light);
+}
+/* DROP DOWN */
