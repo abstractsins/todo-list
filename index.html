@@ -41,21 +41,21 @@
                 <div class="new-task-name">
                     <h4 class="new-task-header">To Do:</h4>
                 </div>
-                <input class="new-task-name-input" type="text">
+                <input class="new-task-name-input" type="text" id="new-task-name-input">
             </div>
 
             <!-- Task Status -->
             <div class="dropdown" id="new-task-status">
                 <button class="dropbtn" id="new-task-status-dropbtn">Select Status...</button>
-                <div class="dropdown-content" id="from-dropdown">
+                <div class="dropdown-content" id="status-dropdown">
                     <ul class="dropdown-list">
-                        <li class="status-text" id="status-0">Not Started</li>
-                        <li class="status-text" id="status-1">Started</li>
-                        <li class="status-text" id="status-2">Planning</li>
-                        <li class="status-text" id="status-3">Planned</li>
-                        <li class="status-text" id="status-4">Scheduled</li>
-                        <li class="status-text" id="status-5">Scheduling</li>
-                        <li class="status-text" id="status-6">Complete</li>
+                        <li class="status-text" id="status-0" onclick="selectStatus(0)">Not Started</li>
+                        <li class="status-text" id="status-1" onclick="selectStatus(1)">Started</li>
+                        <li class="status-text" id="status-2" onclick="selectStatus(2)">Planning</li>
+                        <li class="status-text" id="status-3" onclick="selectStatus(3)">Planned</li>
+                        <li class="status-text" id="status-4" onclick="selectStatus(4)">Scheduled</li>
+                        <li class="status-text" id="status-5" onclick="selectStatus(5)">Scheduling</li>
+                        <li class="status-text" id="status-6" onclick="selectStatus(6)">Complete</li>
                     </ul>
                 </div>
             </div>  
@@ -65,7 +65,7 @@
                 <div class="new-task-name">
                     <h4 class="new-task-header">Notes:</h4>
                 </div>
-                <textarea id="new-task-notes" name="new-task-notes" type="text" rows="20"></textarea>
+                <textarea id="new-task-notes" name="new-task-notes" type="text"></textarea>
             </div>
 
         </div>
@@ -88,46 +88,7 @@
         </div>
         
         <!-- APP BODY -->
-        <div class="app-body">
-
-            <!-- SAMPLE TASK 1 -->
-            <div class="task" id="task-1">
-                <div class="task-text">
-                    <h3>Grocery Shopping</h3>
-                </div>
-            </div>
-
-            <!-- SAMPLE TASK 2 -->
-            <div class="task" id="task-2">
-                <div class="task-text">
-                    <h3>Iron Laundry</h3>
-                </div>
-            </div>
-            
-            <!-- SAMPLE TASK 3 -->
-            <div class="task" id="task-3">
-                <div class="task-text">
-                    <h3>Vaccum</h3>
-                </div>
-            </div>
-
-            <!-- SAMPLE TASK 4 -->
-            <div class="task" id="task-4">
-                <div class="task-text">
-                    <h3>Trash Bags</h3>
-                </div>
-            </div>
-
-            <!-- SAMPLE TASK 5 -->
-            <div class="task" id="task-5">
-                <div class="task-text">
-                    <h3>Clean bathroom</h3>
-                </div>
-            </div>
-            
-
-        </div>
-
+        <div class="app-body"></div>
 
     </div>
 

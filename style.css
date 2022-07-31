@@ -23,9 +23,14 @@
     /* END - CUSTOM COLORS */
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     display: flex;
     flex-flow: column;
+    height: 100vh;
 }
 /* END - 0 -- GLOBAL CONCERNS */
 
@@ -45,13 +50,14 @@ h2 {
 
 h3 {
     font-family: "Lato", sans-serif;
-    font-size: 1.5em;
-    font-weight: 400;
+    font-size: 2em;
+    font-weight: 600;
     color: var(--platinum);
 }
 
 h4 {
     font-family: "Saira Extra Condensed", monospace;
+    color: whitesmoke;
     font-size: 1.5em;
 }
 /* END - 1 -- HEADERS */
@@ -83,7 +89,6 @@ h4 {
     flex-flow: column;
     align-items: center;
     padding: 0 0 50px 0;
-    height: 100%;
 }
 
 .app-header-container {
@@ -152,6 +157,7 @@ h4 {
     background-color: var(--onyx);
     padding: 15px 30px;
     height: 5vh;
+    /* position: relative; */
     /* border-top: 2px solid var(--onyx); */
 }
 
@@ -190,6 +196,8 @@ h4 {
 .new-task-name-input {
     font-size: 1.5em;
     padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .new-task-name {
@@ -198,10 +206,11 @@ h4 {
     justify-content: flex-start;
 }
 
-textarea {
-    width: calc(95%);
-    height: 100%;
+#new-task-notes {
+    /* width: 95%; */
     padding: 10px;
+    height: 275px;
+    border-radius: 5px;
 }
 
 .slide-header {
@@ -231,7 +240,40 @@ textarea {
     width: 50%;
     border-radius: 15px;
     border: 8px double var(--platinum);
+}
+
+.task-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.delete-button {
+    background-color: var(--onyx);
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 15px;
+    border: 3px solid var(--platinum);
+    margin: 20px;
     align-self: center;
+    align-items: center;
+}
+
+.delete-button:hover {
+    background-color: var(--platinum);
+    border-color: var(--onyx);
+    color: var(--onyx);
+    cursor: pointer;
+}
+
+.X {
+    /* color: whitesmoke; */
+    color: var(--onyx);
+    text-align: center;
+    width: 100%;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 36px;
 }
 
 .task {
@@ -244,16 +286,45 @@ textarea {
 }
 
 .task-text {
-    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 15px;
 }
+
+.task-display-status-section {
+    display: flex;
+    align-items: center;
+}
+
+.task-display-status-section h4, 
+.task-text h3{
+    margin: 10px;
+}
+
+.task-display-status-text {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+}
+
+.task-display-status-section .task-display-status-text {
+    border-radius: 10px;
+}
+
+.task-display-status-text:hover {
+    cursor: pointer;
+}
+
 /* END - 3 -- APP BODY */
 
 /* DROP DOWN */
-.dropbtn {
+.dropbtn, 
+.task-display-status-text {
     background-color: var(--sandy-brown);
     color: whitesmoke;
     padding: 5px 11px;
-    margin: 15px 0 0 0;
     font-size: 1.25em;
     font-weight: 400;
     border: 3px solid black;
@@ -268,6 +339,10 @@ textarea {
     background-color: var(--alabaster);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+#new-task-status-dropbtn {
+    width: 150px;
 }
 
 ul {
@@ -291,12 +366,18 @@ li {
     cursor: pointer;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content.active {
     display: block;
 }
 
 .dropdown:hover .dropbtn {
     background-color: whitesmoke;
+    cursor: pointer;
+    color: black;
+}
+
+.status-text {
+    font-size: 25px;
     color: black;
 }
 
