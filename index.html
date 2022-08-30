@@ -13,6 +13,9 @@
     <!-- CSS -->
     <link href="style.css" rel="stylesheet" type="text/css">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c1de2852ae.js" crossorigin="anonymous"></script>
+
     <title>Dan's To-Do List</title>
 </head>
 <body>
@@ -25,14 +28,15 @@
     </div>
 
     <!-- APP CONTAINER -->
-    <div class="app-container">
+    <div class="app-container" id="app_container">
         
-
+        
         <!-- SLIDE -->
         <div class="slide">
-
+            
             <!-- Header -->
             <div class="slide-header">
+                
                 <h2>Add Task</h2>
             </div>
 
@@ -49,13 +53,13 @@
                 <button class="dropbtn" id="new-task-status-dropbtn">Select Status...</button>
                 <div class="dropdown-content" id="status-dropdown">
                     <ul class="dropdown-list">
-                        <li class="status-text" id="status-0" onclick="selectStatus(0)">Not Started</li>
-                        <li class="status-text" id="status-1" onclick="selectStatus(1)">Started</li>
-                        <li class="status-text" id="status-2" onclick="selectStatus(2)">Planning</li>
-                        <li class="status-text" id="status-3" onclick="selectStatus(3)">Planned</li>
-                        <li class="status-text" id="status-4" onclick="selectStatus(4)">Scheduled</li>
-                        <li class="status-text" id="status-5" onclick="selectStatus(5)">Scheduling</li>
-                        <li class="status-text" id="status-6" onclick="selectStatus(6)">Complete</li>
+                        <li class="status-text" id="status-0">Not Started</li>
+                        <li class="status-text" id="status-1">Started</li>
+                        <li class="status-text" id="status-2">Planning</li>
+                        <li class="status-text" id="status-3">Planned</li>
+                        <li class="status-text" id="status-4">Scheduling</li>
+                        <li class="status-text" id="status-5">Scheduled</li>
+                        <li class="status-text" id="status-6">Complete</li>
                     </ul>
                 </div>
             </div>  
@@ -72,23 +76,23 @@
 
         <!-- ADD TASK SECTION -->
         <div class="add-task-container">
-            <div class="btn" onclick="addSlide()">
-                <span class="btn-text">[ + ]</span>
+            <div class="btn" id="add_button_div" onclick="addSlide()">
+                <span class="btn-text" id="add_button_text">[ + ]</span>
             </div>
         </div>
 
         <!-- APP HEADER -->
-        <div class="app-header-container">
+        <div class="app-header-container" id="app_header_container">
             
             <!-- DATE SECTION -->
-            <div class="date">
-                <h2 class="date-string"></h2>
+            <div class="date" id="date_div">
+                <h2 class="date-string" id="date_text"></h2>
             </div>
 
         </div>
         
         <!-- APP BODY -->
-        <div class="app-body"></div>
+        <div class="app-body" id="app-body"></div>
 
     </div>
 

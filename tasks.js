@@ -8,6 +8,16 @@ let Tasks = {};
 /* Helper Functions */
 // Get all Tasks 
 const getAll = () => {
+
+    let taskKeys = Object.keys(Tasks);
+    let taskValues = Object.values(Tasks);      
+    let tasksArr = taskKeys.map((key,i)=>[key, taskValues[i]]);
+    tasksArr.sort((a,b)=>{
+        if (a[1]['status'].charCodeAt(0) > b[1]['status'].charCodeAt(0)) return 1;
+        else return -1;
+    });
+    Tasks = {};
+    tasksArr.forEach(task=> Tasks[task[0]] = task[1])
     return Tasks;
 }
 
@@ -22,9 +32,9 @@ const newTask = (name, status, notes) => {
 };
 
 // Update task status 
-const updateTask = (number, newStatus) => {
-    Tasks[number].status = newStatus;
-    return Tasks[number];
+const updateTask = (task, newStatus) => {
+    Tasks[task].status = newStatus;
+    return Tasks[task];
 }
 
 // Remove Task
@@ -42,10 +52,7 @@ module.exports = {
     removeTask
 };
 
-// SAMPLE TASKS - comment or uncomment this section
-// newTask('Do Dishes', 'Not Started')
-// newTask('Prep Lunches', 'Planned', 'Got the groceries. Chicken is marinating. Just cook and mix everything.')
-//removeTask(1)
+
 /**
  * END OF INPUT - THIS SPACE INTENTIONALLY LEFT BLANK
  * 
