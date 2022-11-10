@@ -4,15 +4,16 @@
   "description": "an API todo list",
   "main": "main.js",
   "scripts": {
-    // "test": "mocha",
-    "start": "nodemon server.js"    
+    "test": "mocha",
+    "start": "nodemon server.js"
   },
   "author": "DJB",
   "license": "ISC",
   "dependencies": {
-    "glow": "^1.2.2",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "glow": "^1.2.2",
+    "mocha": "^10.1.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
   },
@@ -23,5 +24,5 @@
   "bugs": {
     "url": "https://github.com/abstractsins/todo-list/issues"
   },
-  "homepage": "https://github.com/abstractsins/todo-list#readme"  
+  "homepage": "https://github.com/abstractsins/todo-list#readme"
 }
