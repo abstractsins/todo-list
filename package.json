@@ -4,7 +4,6 @@
   "description": "an API todo list",
   "main": "main.js",
   "scripts": {
-    "test": "mocha",
     "start": "nodemon server.js"
   },
   "author": "DJB",
