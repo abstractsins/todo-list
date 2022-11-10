@@ -4,7 +4,7 @@
   "description": "an API todo list",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon server.js"    
   },
   "author": "DJB",
