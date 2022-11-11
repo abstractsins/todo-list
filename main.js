@@ -32,9 +32,9 @@
 // ================================================= //
 // START - 0 - GLOBAL VARIABLES
 // ================================================= //
-
 const log = console.log;
-const url = `https://20.119.8.4/`;
+const PORT = process.env.PORT;
+const url = `https://20.119.8.4${PORT}/`;
 
 // import ()
 
