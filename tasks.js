@@ -7,7 +7,7 @@ let Tasks = {};
 
 /* Helper Functions */
 // Get all Tasks 
-const getAllTasks = () => {
+const getAll = () => {
 
     let taskKeys = Object.keys(Tasks);
     let taskValues = Object.values(Tasks);      
@@ -46,7 +46,7 @@ const removeTask = (name) => {
 /* EXPORTS */
 module.exports = {
     Tasks,
-    getAllTasks,
+    getAll,
     newTask,
     updateTask,
     removeTask
