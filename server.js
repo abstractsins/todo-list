@@ -2,14 +2,20 @@
  * This script handles server routing with functions supplied by tasks.js
  */
 
-import express, { Router } from 'express';
+const express = require('express');
 const app = express();
-import morgan from 'morgan';
-const taskRouter = Router();
-import cors from 'cors';
-import { json } from 'body-parser';
+const morgan = require('morgan');
+const taskRouter = express.Router();
+const cors = require('cors');
+const bodyParser = require('body-parser')
 
-import { Tasks, getAllTasks, newTask, updateTask, removeTask } from './tasks';
+const {    
+    Tasks,
+    getAllTasks,
+    newTask,
+    updateTask,
+    removeTask,
+} = require('./tasks');
 
 const PORT = process.env.PORT || 3000;
 
@@ -19,7 +25,7 @@ app.use(cors());
 // Morgan logging
 app.use(morgan('tiny'))
 // json body parsing //* not sure i need this
-const jsonParser = json()
+const jsonParser = bodyParser.json()
 app.use(jsonParser)
 // Router
 app.use('/', taskRouter)
