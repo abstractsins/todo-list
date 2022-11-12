@@ -2,8 +2,6 @@
  * This script handles server routing with functions supplied by tasks.js
  */
 
-console.log('server.js is running.')
-
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
