@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "an API todo list",
   "scripts": {
-    "start": "node server"
+    "start": "node ./server"
   },
   "author": "DJB",
   "license": "ISC",
