@@ -30,23 +30,6 @@ app.use(jsonParser);
 // Router
 app.use('/', taskRouter);
 
-// // Param
-// taskRouter.param('category', (req,res,next,cat)=>{
-//     const task = getEnvelope(cat);
-//     if (task){
-//         req.task = task;
-//         req.category = cat;
-//         next();
-//     }else{
-//         res.status(404).send('Category not found!');
-//         console.log('\n*****Invalid Category')
-//     }
-// });
-// taskRouter.param('action', (req,res,next,action)=>{
-//     req.action = action;
-//     next();
-// })
-
 // Listen in on server
 app.listen(PORT, function(err){
     if (err) console.log("Error in server setup");    
@@ -60,16 +43,18 @@ taskRouter.get('/', (req, res, next)=>{
     console.log('\n***** Getting all tasks >>>>> ' + JSON.stringify(Tasks))
 })
 
-// PUT 
-taskRouter.put('/:task/:status', (req,res,next)=>{
-    let number = req.params.task;
-    let newStatus = req.params.status;
-    let updated = updateTask(number, newStatus);
+ // PUT 
+ taskRouter.put('/', (req,res,next)=>{
+    console.log(req.body.name)
+    let task = req.body.name;
+    let newStatus = req.body.status;
+    let updated = updateTask(task, newStatus);
     if (updated) {
         res.send(updated);
         console.log(`\n***** Task status updated >>>>> ${JSON.stringify(updated)}`)
     } else {
-        res.status(404).send('something went wrong, Chief...')
+        console.log('something went wrong, Chief...')
+        res.status(404).send();
     }
 })
 
