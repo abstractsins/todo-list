@@ -2,14 +2,20 @@
  * This script handles server routing with functions supplied by tasks.js
  */
 
-import express, { Router } from 'express';
+const express = require('express');
 const app = express();
-import morgan from 'morgan';
-const taskRouter = Router();
-import cors from 'cors';
-import { json } from 'body-parser';
+const morgan = require('morgan');
+const taskRouter = express.Router();
+const cors = require('cors');
+// const json = require('body-parser');
 
-import { Tasks, getAll, newTask, updateTask, removeTask } from './tasks';
+const { 
+    Tasks, 
+    getAllTasks, 
+    newTask, 
+    updateTask, 
+    removeTask 
+} = require('./tasks');
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,9 +24,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 // Morgan logging
 app.use(morgan('tiny'))
-// json body parsing //* not sure i need this
-const jsonParser = json()
-app.use(jsonParser)
+// // json body parsing //* not sure i need this
+// const jsonParser = json()
+// app.use(jsonParser)
 // Router
 app.use('/', taskRouter)
 
@@ -33,7 +39,7 @@ app.listen(PORT, function(err){
 // GET
 // Get all
 taskRouter.get('/', (req, res, next)=>{
-    res.status(200).send(getAll())
+    res.status(200).send(getAllTasks())
     console.log('\n***** Getting all tasks >>>>> ' + JSON.stringify(Tasks))
 })
 

@@ -34,9 +34,9 @@
 // ================================================= //
 const log = console.log;
 // const PORT = process.env.PORT;
-const url = `https://20.119.8.4:${PORT}/`;
-
-// import ()
+// const PORT = '3000';
+const ip = '127.0.0.1'
+const url = `https://${ip}:${PORT}/`;
 
 // ------------------------------------------------- //
 // END - 0 - GLOBAL VARIABLES
