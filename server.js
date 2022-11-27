@@ -7,7 +7,7 @@ const app = express();
 const morgan = require('morgan');
 const taskRouter = express.Router();
 const cors = require('cors');
-// const json = require('body-parser');
+const bodyParser = require('body-parser');
 
 const { 
     Tasks, 
@@ -23,12 +23,12 @@ const PORT = process.env.PORT || 3000;
 // Cors
 app.use(cors());
 // Morgan logging
-app.use(morgan('tiny'))
-// // json body parsing //* not sure i need this
-// const jsonParser = json()
-// app.use(jsonParser)
+app.use(morgan('tiny'));
+// json body parsing //* not sure i need this
+const jsonParser = bodyParser.json();
+app.use(jsonParser);
 // Router
-app.use('/', taskRouter)
+app.use('/', taskRouter);
 
 // // Param
 // taskRouter.param('category', (req,res,next,cat)=>{

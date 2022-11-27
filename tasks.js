@@ -7,7 +7,7 @@ let Tasks = {};
 
 /* Helper Functions */
 // Get all Tasks 
-const getAll = () => {
+const getAllTasks = () => {
     return Tasks;
 }
 
